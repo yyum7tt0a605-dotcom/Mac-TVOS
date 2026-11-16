@@ -11,9 +11,9 @@
 
 ## 影片展示
 
-約 95 秒完整導覽（v40）：主畫面景深時鐘 → 應用程式庫 → Finder → 系統設定 → 照片 → 行事曆 → AirPods → 控制中心 → 垃圾桶 → 下載
+約 86 秒完整導覽（v40，中文配音＋背景音樂）：主畫面景深時鐘 → 應用程式庫 → Finder → 系統設定 → 照片 → 行事曆 → AirPods → 控制中心 → 垃圾桶 → 下載
 
-https://github.com/user-attachments/assets/919c750b-d43d-40de-ac19-cc7243740a71
+https://github.com/user-attachments/assets/0f9f1406-c5a5-4734-9e3b-c75555c1fea6
 
 ---
 
