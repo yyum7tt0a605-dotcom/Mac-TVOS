@@ -8,7 +8,7 @@
 
 <br>
 
-[![下載 v40](https://img.shields.io/badge/%E4%B8%8B%E8%BC%89-v40-0A84FF?style=flat-square)](../../releases/latest)&nbsp;&nbsp;![Android 9+](https://img.shields.io/badge/Android-9%2B-34C759?style=flat-square&logo=android&logoColor=white)&nbsp;&nbsp;![Google TV](https://img.shields.io/badge/Google%20TV-%E6%94%AF%E6%8F%B4-5E5CE6?style=flat-square&logo=googletv&logoColor=white)
+[![下載 v43](https://img.shields.io/badge/%E4%B8%8B%E8%BC%89-v43-0A84FF?style=flat-square)](../../releases/latest)&nbsp;&nbsp;![Android 9+](https://img.shields.io/badge/Android-9%2B-34C759?style=flat-square&logo=android&logoColor=white)&nbsp;&nbsp;![Google TV](https://img.shields.io/badge/Google%20TV-%E6%94%AF%E6%8F%B4-5E5CE6?style=flat-square&logo=googletv&logoColor=white)
 
 </div>
 
@@ -22,7 +22,9 @@ https://github.com/user-attachments/assets/b7449272-4590-438f-9d3d-edf139887eb6
 
 > 需要一台電腦（macOS／Linux）和 [adb](https://developer.android.com/tools/releases/platform-tools)，電視開啟「開發人員選項 → 網路偵錯」。
 
-**1.** 下載 [`MacTVOS-v40.zip`](../../releases/latest) 並解壓縮
+[v43 版本說明與實機前後對照](../../releases/tag/v43)
+
+**1.** 下載 [`MacTVOS-v43.zip`](../../releases/latest) 並解壓縮
 
 **2.** 安裝並設為主畫面
 
@@ -129,7 +131,7 @@ https://github.com/user-attachments/assets/b7449272-4590-438f-9d3d-edf139887eb6
 <summary><b>完整版｜去臃腫＋安裝＋功能檢查</b></summary>
 
 ```text
-電視 IP：192.168.x.x（埠 5555）。安裝包位置：~/Downloads/MacTVOS-v40（改成你的資料夾）。
+電視 IP：192.168.x.x（埠 5555）。安裝包位置：~/Downloads/MacTVOS-v43（改成你的資料夾）。
 請當我的電視助手，用 ADB 幫我「去臃腫、安裝 Mac TVOS、檢查功能」，規則如下：
 
 【連線】
@@ -171,7 +173,7 @@ https://github.com/user-attachments/assets/b7449272-4590-438f-9d3d-edf139887eb6
 <summary><b>只安裝 Mac TVOS</b></summary>
 
 ```text
-電視 IP：192.168.x.x（埠 5555）。安裝包在 ~/Downloads/MacTVOS-v40。
+電視 IP：192.168.x.x（埠 5555）。安裝包在 ~/Downloads/MacTVOS-v43。
 請用 ADB 幫我安裝 Mac TVOS：
 1. adb connect，回報型號、Android 版本、目前主畫面。
 2. 先記下目前主畫面（cmd package resolve-activity -c android.intent.category.HOME），方便還原。
