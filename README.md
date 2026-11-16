@@ -2,8 +2,8 @@
 
 把 Android TV／Google TV 的主畫面換成 macOS 風格：選單列、Dock、Finder、系統設定、照片、行事曆、景深時鐘，全部用遙控器操作。
 
-- 最新版：**v39**，支援 **Android 9 以上**（v40 視窗縮小版已完成實機測試，尚未打包發布）。
-- 下載：[Releases](../../releases/latest) 的 `MacTVOS-v39.zip`（APK、一鍵安裝腳本、主題設定、去臃腫提示詞）。
+- 最新版：**v40**，支援 **Android 9 以上**。
+- 下載：[Releases](../../releases/latest) 的 `MacTVOS-v40.zip`（APK、一鍵安裝腳本、主題設定、去臃腫提示詞）。
 - 實測機型：Google TV Streamer（Android 14）、SAMPO 聯網電視（MediaTek，Android 9）。
 - 本專案是 macOS TV 啟動器 4.1.3（`com.gathin.tvhome`）的修改版，改用獨立套件名 `com.gathin.tvnext`，可以和原版並存。
 
@@ -127,7 +127,7 @@
 
 ## 和原版不一樣的地方
 
-| 項目 | 原版 4.1.3 | Mac TVOS v39 |
+| 項目 | 原版 4.1.3 | Mac TVOS v40 |
 |---|---|---|
 | 套件名 | `com.gathin.tvhome` | `com.gathin.tvnext`，可和原版並存 |
 | 支援系統 | Android 11 以上功能才完整 | Android 9 以上，舊系統自動改用讀寫權限 |
@@ -231,6 +231,7 @@ adb shell am force-stop com.gathin.tvnext
 | 穩定性 | v33 | 冷啟動不再閃錯位、AirPods 卡片權限 |
 | 實用功能 | v34–v38 | 自製行事曆、垃圾桶三項、Finder 與選單深淺色、時鐘置中 |
 | 舊系統 | v39 | 支援 Android 9／10 |
+| 視窗 | v40 | 設定、照片、Finder、下載視窗縮小約一成 |
 
 | 冷啟動修正前（Dock 跑到中間） | 修正後 |
 |---|---|
@@ -241,7 +242,7 @@ adb shell am force-stop com.gathin.tvnext
 ## 安裝
 
 1. 電視：設定 → 系統 → 關於 → 連按「Android TV 作業系統版本」7 次 → 開發人員選項 → 開啟「USB 偵錯」與「網路偵錯」。查電視 IP。
-2. 電腦：安裝 [platform-tools](https://developer.android.com/tools/releases/platform-tools)，解壓 `MacTVOS-v39.zip`。
+2. 電腦：安裝 [platform-tools](https://developer.android.com/tools/releases/platform-tools)，解壓 `MacTVOS-v40.zip`。
 3. 執行：
 
 ```bash
@@ -265,7 +266,7 @@ adb shell am force-stop com.gathin.tvnext
 ### 1. 完整版：去臃腫 + 安裝 Mac TVOS + 檢查
 
 ```text
-電視 IP：192.168.x.x（埠 5555）。安裝包位置：~/Downloads/MacTVOS-v39（改成你的資料夾）。
+電視 IP：192.168.x.x（埠 5555）。安裝包位置：~/Downloads/MacTVOS-v40（改成你的資料夾）。
 請當我的電視助手，用 ADB 幫我「去臃腫、安裝 Mac TVOS、檢查功能」，規則如下：
 
 【連線】
@@ -304,7 +305,7 @@ adb shell am force-stop com.gathin.tvnext
 ### 2. 只安裝 Mac TVOS
 
 ```text
-電視 IP：192.168.x.x（埠 5555）。安裝包在 ~/Downloads/MacTVOS-v39。
+電視 IP：192.168.x.x（埠 5555）。安裝包在 ~/Downloads/MacTVOS-v40。
 請用 ADB 幫我安裝 Mac TVOS：
 1. adb connect，回報型號、Android 版本、目前主畫面。
 2. 先記下目前主畫面（cmd package resolve-activity -c android.intent.category.HOME），方便還原。
