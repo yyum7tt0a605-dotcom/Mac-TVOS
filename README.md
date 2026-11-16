@@ -14,7 +14,7 @@
 
 <br>
 
-https://github.com/user-attachments/assets/17f6c6da-5149-4c28-ba48-f7c0a5587ff6
+https://github.com/user-attachments/assets/b7449272-4590-438f-9d3d-edf139887eb6
 
 <br>
 
@@ -47,34 +47,79 @@ https://github.com/user-attachments/assets/17f6c6da-5149-4c28-ba48-f7c0a5587ff6
 </tr>
 </table>
 
-## 畫面
+## 功能一覽
 
-<table>
-<tr>
-<td width="50%"><img src="docs/images/finder-dark.jpg" alt="Finder　深色"><br><sub><b>Finder　深色</b></sub></td>
-<td width="50%"><img src="docs/images/finder-light.jpg" alt="Finder　淺色"><br><sub><b>Finder　淺色</b></sub></td>
-</tr>
-<tr>
-<td width="50%"><img src="docs/images/settings.jpg" alt="系統設定"><br><sub><b>系統設定</b></sub></td>
-<td width="50%"><img src="docs/images/photos-dark.jpg" alt="照片"><br><sub><b>照片</b></sub></td>
-</tr>
-<tr>
-<td width="50%"><img src="docs/images/calendar.jpg" alt="行事曆"><br><sub><b>行事曆</b></sub></td>
-<td width="50%"><img src="docs/images/airpods-card.jpg" alt="AirPods 卡片"><br><sub><b>AirPods 卡片</b></sub></td>
-</tr>
-<tr>
-<td width="50%"><img src="docs/images/about.jpg" alt="關於這台電視"><br><sub><b>關於這台電視</b></sub></td>
-<td width="50%"><img src="docs/images/photos-light.jpg" alt="照片　淺色"><br><sub><b>照片　淺色</b></sub></td>
-</tr>
-<tr>
-<td width="50%"><img src="docs/images/trash-menu.jpg" alt="垃圾桶"><br><sub><b>垃圾桶</b></sub></td>
-<td width="50%"><img src="docs/images/boost.jpg" alt="一鍵提速"><br><sub><b>一鍵提速</b></sub></td>
-</tr>
-<tr>
-<td width="50%"><img src="docs/images/clock-center.jpg" alt="景深時鐘"><br><sub><b>景深時鐘</b></sub></td>
-<td width="50%"><img src="docs/images/longpress-light.jpg" alt="淺色選單"><br><sub><b>淺色選單</b></sub></td>
-</tr>
-</table>
+### Finder（選單列「檔案」）
+
+依外觀自動切換深色／淺色。側欄有 iCloud、Android TV、內部儲存空間、網路、桌面、AirDrop、最近項目、應用程式。
+
+| 深色 | 淺色 |
+|---|---|
+| ![Finder 深色](docs/images/finder-dark.jpg) | ![Finder 淺色](docs/images/finder-light.jpg) |
+
+### 系統設定
+
+側欄照 macOS 順序排列：Wi-Fi、藍牙、網路、電源、一般、輔助使用、外觀、背景圖片、桌面與 Dock、選單列、顯示器、智能助理與 Siri、Spotlight、通知、聲音、鎖定畫面、隱私權與安全性、螢幕保護程式。開啟時預設在「一般」。
+
+![系統設定](docs/images/settings.jpg)
+
+### 照片
+
+半透明玻璃視窗，跟隨外觀深淺色。「年／月／所有照片」在上方，側欄有喜好項目、最近儲存、影片、截圖、人物、最近刪除。點開單張照片會全螢幕顯示在最上層。
+
+| 深色 | 淺色 |
+|---|---|
+| ![照片深色](docs/images/photos-dark.jpg) | ![照片淺色](docs/images/photos-light.jpg) |
+
+### 行事曆
+
+點選單列右上的日期或 Dock 的行事曆，跳出磨砂玻璃小卡；再點一次、點卡片外、按返回都會關閉。
+
+![行事曆](docs/images/calendar.jpg)
+
+### 關於這台電視
+
+顯示型號、記憶體、儲存空間與 Android 版本。
+
+![關於這台電視](docs/images/about.jpg)
+
+### 垃圾桶：清理暫存、垃圾檔案、一鍵提速
+
+點 Dock 的垃圾桶，標題顯示目前記憶體用量，下面三項：
+
+| 功能 | 做什麼 |
+|---|---|
+| 清理暫存 | 清主畫面自己的快取，再開系統「清除應用程式暫存檔案」，清所有 App 的快取 |
+| 垃圾檔案 | 刪除內部儲存的 `.tmp`、`.temp`、`.log` 和縮圖快取（保留 `.nomedia`），再清空媒體垃圾桶 |
+| 一鍵提速 | 結束其他 App 的背景程序，顯示釋放了多少記憶體 |
+
+| 選單 | 垃圾檔案 |
+|---|---|
+| ![垃圾桶選單](docs/images/trash-menu.jpg) | ![垃圾檔案](docs/images/junk-files.jpg) |
+| **一鍵提速** | **清理暫存** |
+| ![一鍵提速](docs/images/boost.jpg) | ![清理暫存](docs/images/clear-cache.jpg) |
+
+### AirPods 卡片
+
+點選單列的耳機圖示，顯示藍牙耳機卡片（需要藍牙權限，安裝腳本會授予）。
+
+![AirPods 卡片](docs/images/airpods-card.jpg)
+
+### 景深時鐘
+
+時鐘放在天空區域，被大樓擋住，看起來在建築後面。時間補零顯示（例：`08:05`），可拖動位置，「重設位置」回到置中。
+
+![時鐘置中](docs/images/clock-center.jpg)
+
+### 夜景桌布
+
+![夜景桌布](docs/images/moon-after.jpg)
+
+### 淺色長按選單
+
+應用程式庫的長按選單和所有下拉選單，淺色外觀時改成淺色毛玻璃、深色字、藍色焦點列。
+
+![長按選單淺色](docs/images/longpress-light.jpg)
 
 ## 提示詞
 
