@@ -1,11 +1,21 @@
-# Mac TVOS：把 Android TV 變成 macOS 桌面
+# Mac TVOS
 
 把 Android TV／Google TV 的主畫面換成 macOS 風格：選單列、Dock、Finder、系統設定、照片、行事曆、景深時鐘，全部用遙控器操作。
 
 - 最新版：**v40**，支援 **Android 9 以上**。
 - 下載：[Releases](../../releases/latest) 的 `MacTVOS-v40.zip`（APK、一鍵安裝腳本、主題設定、去臃腫提示詞）。
 - 實測機型：Google TV Streamer（Android 14）、SAMPO 聯網電視（MediaTek，Android 9）。
-- 本專案是 macOS TV 啟動器 4.1.3（`com.gathin.tvhome`）的修改版，改用獨立套件名 `com.gathin.tvnext`，可以和原版並存。
+
+---
+
+## 目錄
+
+1. [影片展示](#影片展示)
+2. [改造前後](#改造前後對照)
+3. [功能一覽](#功能一覽)
+4. [安裝](#安裝)
+5. [提示詞](#提示詞)
+6. [注意事項與還原](#注意事項與還原)
 
 ---
 
@@ -14,20 +24,6 @@
 約 54 秒完整導覽（v40，EVAN 配音、繁中字幕）：主畫面 → 應用程式庫 → Finder → 系統設定 → 照片 → 行事曆 → AirPods → 控制中心 → 垃圾桶 → 下載 → 揭曉
 
 https://github.com/user-attachments/assets/d59fb1b5-7d30-4fd2-8e03-aa0485931796
-
----
-
-## 目錄
-
-1. [改造前後對照](#改造前後對照)
-2. [新增的功能](#新增的功能)
-3. [和原版不一樣的地方](#和原版不一樣的地方)
-4. [主題設定](#主題設定)
-5. [改造過程](#改造過程)
-6. [安裝](#安裝)
-7. [提示詞](#提示詞)
-8. [注意事項與還原](#注意事項與還原)
-9. [版本紀錄](#版本紀錄)
 
 ---
 
@@ -55,7 +51,7 @@ https://github.com/user-attachments/assets/d59fb1b5-7d30-4fd2-8e03-aa0485931796
 
 ---
 
-## 新增的功能
+## 功能一覽
 
 ### Finder（選單列「檔案」）
 
@@ -111,139 +107,17 @@ https://github.com/user-attachments/assets/d59fb1b5-7d30-4fd2-8e03-aa0485931796
 
 時鐘放在天空區域，被大樓擋住，看起來在建築後面。時間補零顯示（例：`08:05`），可拖動位置，「重設位置」回到置中。
 
-| 景深遮罩修正前（數字壓在大樓上） | 修正後 |
-|---|---|
-| ![景深失效](docs/images/clock-depth-before.jpg) | ![景深正常](docs/images/clock-depth-after.jpg) |
-
 ![時鐘置中](docs/images/clock-center.jpg)
 
-### 立體月亮
+### 夜景桌布
 
-芝加哥夜景桌布的月亮改成邊緣漸暗、中央略亮，看起來是球體。
-
-| 修改前 | 修改後 |
-|---|---|
-| ![月亮修改前](docs/images/moon-before.jpg) | ![月亮修改後](docs/images/moon-after.jpg) |
+![夜景桌布](docs/images/moon-after.jpg)
 
 ### 淺色長按選單
 
 應用程式庫的長按選單和所有下拉選單，淺色外觀時改成淺色毛玻璃、深色字、藍色焦點列。
 
 ![長按選單淺色](docs/images/longpress-light.jpg)
-
----
-
-## 和原版不一樣的地方
-
-| 項目 | 原版 4.1.3 | Mac TVOS v40 |
-|---|---|---|
-| 套件名 | `com.gathin.tvhome` | `com.gathin.tvnext`，可和原版並存 |
-| 支援系統 | Android 11 以上功能才完整 | Android 9 以上，舊系統自動改用讀寫權限 |
-| Dock | 一般 Dock | 底部 Dock、焦點放大與名稱跟隨、已釘選 App 有小圓點、行事曆與下載資料夾 |
-| 應用程式庫 | 一般格狀 | 模糊背景、即時圖示、已釘選打勾、七到八欄 |
-| Finder、照片、下拉選單 | 固定白底 | 跟隨深淺色 |
-| 設定 | Android 順序 | macOS 順序 |
-| 行事曆 | 系統對話框 | 自製模糊小卡 |
-| 垃圾桶 | 從 Dock 移除、解除安裝 | 清理暫存、垃圾檔案、一鍵提速 |
-| 冷啟動 | Dock 會先出現在畫面中段再跳回 | 等版面準備好才淡入，不會閃錯位 |
-| 主題設定 | 只能在 App 內調 | 可用 ADB 寫入 `config.json`，一鍵套到多台電視 |
-| 安裝 | `adb install` | 腳本先上傳、比對 md5、電視端安裝、授權、設主畫面 |
-
-**多出的服務**
-
-- **主題提供者** `content://com.gathin.tvnext.theme`：可讀寫 `config.json`、`theme_revision`，電腦端一行指令就能換主題或同步多台。
-- **TrashCleaner**：清快取、清垃圾檔、結束背景程序。
-- **Reveal**：冷啟動時等主執行緒穩定後再淡入畫面。
-- **FinderTheme／PhotoTheme／GlassTint**：統一的深淺色判斷（含依時間自動切換）。
-- **一鍵安裝腳本** `install.sh`：自動判斷 Android 版本，給對的權限。
-
----
-
-## 主題設定
-
-macOS 模式寫在主題設定 `theme-config.json`，不在 APK 預設裡。重點欄位：
-
-| 設定 | 值 | 說明 |
-|---|---|---|
-| `mac_dock` | true | macOS Dock |
-| `mac_settings` | true | macOS 風格設定視窗 |
-| `top_menu` | true | 上方選單列 |
-| `dock_glass` / `glass_style` | true / `rim` | 玻璃 Dock、亮邊 |
-| `dock_opacity` | 45 | Dock 底板不透明度 |
-| `dock_width_percent` | 46 | Dock 寬度占畫面比例 |
-| `wallpaper` / `wallpaper_dim` | true / 20 | 顯示桌布、壓暗 20% |
-| `background_color` | `#05060F` | 沒桌布時的底色 |
-| `columns` | 8 | 應用程式庫欄數 |
-| `square_tiles` / `uniform_tiles` | true | 圓角方形圖示、尺寸一致 |
-| `reduced_motion` | true | 簡化動畫，電視盒較順 |
-| `app_banners` | 清單 | 把 App 對應到 Mac 圖示，例：`com.android.vending=banner_mac_appstore` |
-| `app_labels` | 清單 | 改顯示名稱，例：`com.android.gallery3d=照片` |
-| `hidden_apps` | 清單 | 從應用程式庫隱藏的 App |
-| `dock_apps` | 清單 | Dock 預設 App（舊電視可用來指定 Dock） |
-
-內建 Mac 圖示：`banner_mac_safari`、`banner_mac_settings`、`banner_mac_photos`、`banner_mac_music`、`banner_mac_appstore`、`banner_mac_iphonemirror`、`banner_mac_clock`、`banner_mac_home`。
-
-不同品牌的設定、相簿、瀏覽器套件名不同。例如 SAMPO 是 `com.kgzn.setting`、`com.kgzn.media`、`com.android.browser`，要自己加到 `app_banners`。
-
-**外觀**：設定 →「外觀」可選深色、淺色、自動（依時間）。桌布有芝加哥夜景、雪山湖泊等內建圖，可輪播。
-
-**套用主題**（發行包內已附腳本）：
-
-```bash
-./apply-theme.sh <電視IP>
-```
-
-它做的事等於：
-
-```bash
-adb push theme-config.json /data/local/tmp/config.json
-adb shell "content write --uri content://com.gathin.tvnext.theme/config.json < /data/local/tmp/config.json"
-adb shell "date +%s > /data/local/tmp/rev; content write --uri content://com.gathin.tvnext.theme/theme_revision < /data/local/tmp/rev"
-adb shell am force-stop com.gathin.tvnext
-```
-
----
-
-## 改造過程
-
-### 工具
-
-| 工具 | 用途 |
-|---|---|
-| Android platform-tools（adb） | 連電視、安裝、截圖、授權 |
-| apktool 3.x | 解包成 smali 與資源，改完再打包 |
-| JRE 21 | 執行 apktool、apksigner |
-| build-tools 34（zipalign、apksigner） | 對齊與簽章 |
-| Claude Code | 讀 smali、改程式、實機驗證、寫紀錄 |
-
-### 流程
-
-1. `apktool d` 解包原版 4.1.3。
-2. 改 `AndroidManifest.xml` 的套件名為 `com.gathin.tvnext`，讓它和原版並存，不會覆蓋原版資料。
-3. 改 smali：每個功能新增或修改類別（例：`TrashCleaner`、`Reveal`、`FinderTheme`、`GlassTint`、`MenuCalendar`）。
-4. 換套件名後，程式用套件名查圖片資源會查不到（資源表仍是舊名），要把這些地方改成固定用資源套件名，否則景深時鐘等效果會失效。
-5. `apktool b` 打包 → `zipalign` → `apksigner` 用自己的金鑰簽章。
-6. 安裝：先把 APK 上傳到電視、比對 md5，再在電視端 `pm install -r`（無線直接 `adb install` 曾經傳到一半導致主畫面不斷當機）。
-7. 授權、設預設主畫面、寫入主題設定。
-8. 每一版都在電視上截圖驗證，寫進版本紀錄。
-
-### 演進
-
-| 階段 | 版本 | 重點 |
-|---|---|---|
-| 並存測試 | v1–v7 | 獨立套件、Dock 釘選小圓點、應用程式庫七欄、日期開月曆 |
-| Dock 與應用程式庫 | v8–v11 | Mac 圖示對應、磨砂應用程式庫、Dock 置底 |
-| 打磨 | v22–v28 | Dock 動畫與名稱對齊、隱藏重複設定、焦點縮放 |
-| 系統視窗 | v29–v30 | 設定改 macOS 順序、照片玻璃視窗與深淺色、修景深時鐘 |
-| 桌布 | v31–v32 | 立體月亮 |
-| 穩定性 | v33 | 冷啟動不再閃錯位、AirPods 卡片權限 |
-| 實用功能 | v34–v38 | 自製行事曆、垃圾桶三項、Finder 與選單深淺色、時鐘置中 |
-| 舊系統 | v39 | 支援 Android 9／10 |
-| 視窗 | v40 | 設定、照片、Finder、下載視窗縮小約一成 |
-
-| 冷啟動修正前（Dock 跑到中間） | 修正後 |
-|---|---|
-| ![冷啟動修正前](docs/images/coldstart-before.jpg) | ![冷啟動修正後](docs/images/coldstart-after.jpg) |
 
 ---
 
@@ -371,19 +245,3 @@ adb shell cmd package set-home-activity com.google.android.apps.tv.launcherx/com
 ```bash
 adb shell pm uninstall com.gathin.tvnext
 ```
-
----
-
-## 版本紀錄
-
-- **v40**（2026-11-16）：設定、照片、Finder、下載視窗開啟時縮小約一成，四周露出桌布，照片不再蓋住 Dock（設定四周邊距 96／60 dp；照片 72%×70%；Finder 60%；下載 56%×60%）。
-- **v39**（2026-11-16）：支援 Android 9／10。安裝腳本依版本給權限；垃圾檔案在舊系統不再閃退；移除舊系統多跳的媒體權限提示。
-- **v38**：Finder、下拉選單、長按選單跟隨深淺色；垃圾桶改三項；景深時鐘置中、時間補零。
-- **v37**：自製行事曆小卡；垃圾桶一鍵清理與記憶體顯示；關於這台電視漸層加深。
-- **v33**：冷啟動等版面準備好才淡入；AirPods 卡片權限；照片淺色修正。
-- **v32**：月亮邊緣漸暗。
-- **v30**：照片跟隨深淺色；修正換套件名後景深時鐘失效。
-- **v29**：設定改 macOS 順序；照片深色玻璃視窗。
-- **v22–v28**：Dock 動畫、名稱對齊、焦點縮放、隱藏重複設定。
-- **v8–v11**：Mac 圖示對應、磨砂應用程式庫、Dock 置底。
-- **v1–v7**：獨立套件並存、Dock 釘選小圓點、應用程式庫七欄、月曆入口。
