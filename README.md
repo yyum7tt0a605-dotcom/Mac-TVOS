@@ -1,151 +1,87 @@
+<div align="center">
+
 # Mac TVOS
 
-把 Android TV／Google TV 的主畫面換成 macOS 風格：選單列、Dock、Finder、系統設定、照片、行事曆、景深時鐘，全部用遙控器操作。
+**把 Android TV／Google TV 的主畫面，變成 macOS。**
 
-- 最新版：**v40**，支援 **Android 9 以上**。
-- 下載：[Releases](../../releases/latest) 的 `MacTVOS-v40.zip`（APK、一鍵安裝腳本、主題設定、去臃腫提示詞）。
-- 實測機型：Google TV Streamer（Android 14）、SAMPO 聯網電視（MediaTek，Android 9）。
+<sub>選單列・Dock・Finder・系統設定・照片・行事曆・景深時鐘　全部用遙控器操作</sub>
 
----
+<br>
 
-## 目錄
+[![下載 v40](https://img.shields.io/badge/%E4%B8%8B%E8%BC%89-v40-0A84FF?style=flat-square)](../../releases/latest)
+&nbsp;
+![Android 9+](https://img.shields.io/badge/Android-9%2B-34C759?style=flat-square&logo=android&logoColor=white)
+&nbsp;
+![Google TV](https://img.shields.io/badge/Google%20TV-%E6%94%AF%E6%8F%B4-5E5CE6?style=flat-square&logo=googletv&logoColor=white)
 
-1. [影片展示](#影片展示)
-2. [改造前後](#改造前後對照)
-3. [功能一覽](#功能一覽)
-4. [安裝](#安裝)
-5. [提示詞](#提示詞)
-6. [注意事項與還原](#注意事項與還原)
+</div>
 
----
-
-## 影片展示
-
-約 52 秒完整導覽（v40，EVAN 配音、繁中字幕）：主畫面 → 應用程式庫 → Finder → 系統設定 → 照片 → 行事曆 → AirPods → 控制中心 → 垃圾桶 → 下載 → 揭曉
+<br>
 
 https://github.com/user-attachments/assets/cfc81aba-39a8-4b2f-8ec8-760da20de292
 
----
+<br>
 
-## 改造前後對照
+## 三步安裝
 
-### 改造前：原廠主畫面
+> 需要一台電腦（macOS／Linux）和 [adb](https://developer.android.com/tools/releases/platform-tools)，電視開啟「開發人員選項 → 網路偵錯」。
 
-| SAMPO 原廠主畫面 | 原廠系統設定 |
-|---|---|
-| ![原廠主畫面](docs/images/before-stock-home.jpg) | ![原廠系統設定](docs/images/before-stock-settings.jpg) |
+**1.** 下載 [`MacTVOS-v40.zip`](../../releases/latest) 並解壓縮
 
-原廠主畫面是一排排訊號源和 App 方塊，設定是一格格的大圖示。Google TV 原廠主畫面則是推薦影片牆。
-
-### 改造後：Mac TVOS
-
-**Google TV Streamer（Android 14）**
-
-![Google TV 改造後](docs/images/after-googletv.jpg)
-
-**SAMPO 電視（Android 9）**
-
-![SAMPO 改造後](docs/images/after-sampo.jpg)
-
-上方是 macOS 選單列（Finder、檔案、顯示方式、搜尋、音樂、天氣、耳機、Wi-Fi、控制中心、日期時間），中間是景深時鐘，下方是 Dock。兩台用同一份主題設定。
-
----
-
-## 功能一覽
-
-### Finder（選單列「檔案」）
-
-依外觀自動切換深色／淺色。側欄有 iCloud、Android TV、內部儲存空間、網路、桌面、AirDrop、最近項目、應用程式。
-
-| 深色 | 淺色 |
-|---|---|
-| ![Finder 深色](docs/images/finder-dark.jpg) | ![Finder 淺色](docs/images/finder-light.jpg) |
-
-### 系統設定
-
-側欄照 macOS 順序排列：Wi-Fi、藍牙、網路、電源、一般、輔助使用、外觀、背景圖片、桌面與 Dock、選單列、顯示器、智能助理與 Siri、Spotlight、通知、聲音、鎖定畫面、隱私權與安全性、螢幕保護程式。開啟時預設在「一般」。
-
-![系統設定](docs/images/settings.jpg)
-
-### 照片
-
-半透明玻璃視窗，跟隨外觀深淺色。「年／月／所有照片」在上方，側欄有喜好項目、最近儲存、影片、截圖、人物、最近刪除。點開單張照片會全螢幕顯示在最上層。
-
-| 深色 | 淺色 |
-|---|---|
-| ![照片深色](docs/images/photos-dark.jpg) | ![照片淺色](docs/images/photos-light.jpg) |
-
-### 行事曆與關於這台電視
-
-點選單列右上的日期或 Dock 的行事曆，跳出模糊桌布背景的月曆小卡；再點一次、點卡片外、按返回都會關閉。「關於這台電視」顯示型號、記憶體、儲存空間、Android 版本。
-
-![行事曆與關於本機](docs/images/calendar-about.jpg)
-
-### 垃圾桶：清理暫存、垃圾檔案、一鍵提速
-
-點 Dock 的垃圾桶，標題顯示目前記憶體用量，下面三項：
-
-| 功能 | 做什麼 |
-|---|---|
-| 清理暫存 | 清主畫面自己的快取，再開系統「清除應用程式暫存檔案」，清所有 App 的快取 |
-| 垃圾檔案 | 刪除內部儲存的 `.tmp`、`.temp`、`.log` 和縮圖快取（保留 `.nomedia`），再清空媒體垃圾桶 |
-| 一鍵提速 | 結束其他 App 的背景程序，顯示釋放了多少記憶體 |
-
-| 選單 | 垃圾檔案 |
-|---|---|
-| ![垃圾桶選單](docs/images/trash-menu.jpg) | ![垃圾檔案](docs/images/junk-files.jpg) |
-| **一鍵提速** | **清理暫存** |
-| ![一鍵提速](docs/images/boost.jpg) | ![清理暫存](docs/images/clear-cache.jpg) |
-
-### AirPods 卡片
-
-點選單列的耳機圖示，顯示藍牙耳機卡片（需要藍牙權限，安裝腳本會授予）。
-
-![AirPods 卡片](docs/images/airpods.jpg)
-
-### 景深時鐘
-
-時鐘放在天空區域，被大樓擋住，看起來在建築後面。時間補零顯示（例：`08:05`），可拖動位置，「重設位置」回到置中。
-
-![時鐘置中](docs/images/clock-center.jpg)
-
-### 夜景桌布
-
-![夜景桌布](docs/images/moon-after.jpg)
-
-### 淺色長按選單
-
-應用程式庫的長按選單和所有下拉選單，淺色外觀時改成淺色毛玻璃、深色字、藍色焦點列。
-
-![長按選單淺色](docs/images/longpress-light.jpg)
-
----
-
-## 安裝
-
-1. 電視：設定 → 系統 → 關於 → 連按「Android TV 作業系統版本」7 次 → 開發人員選項 → 開啟「USB 偵錯」與「網路偵錯」。查電視 IP。
-2. 電腦：安裝 [platform-tools](https://developer.android.com/tools/releases/platform-tools)，解壓 `MacTVOS-v40.zip`。
-3. 執行：
+**2.** 安裝並設為主畫面
 
 ```bash
-./install.sh <電視IP>
+./install.sh 電視IP
 ```
+
+**3.** 套用 macOS 主題
 
 ```bash
-./apply-theme.sh <電視IP>
+./apply-theme.sh 電視IP
 ```
 
-4. 電視跳出「允許 USB 偵錯？」時勾「一律允許」。
+<sub>電視跳出「允許 USB 偵錯？」時選「一律允許」。支援 Android 9 以上。</sub>
 
-`install.sh` 會：上傳 APK、比對 md5（不一致自動重傳）、安裝、依 Android 版本授予檔案權限（11 以上用 appops，9／10 用 pm grant）、授予照片／藍牙權限、設為預設主畫面。
+## 改造前後
 
----
+<table>
+<tr>
+<td width="50%"><img src="docs/images/before-stock-home.jpg" alt="改造前"><br><sub><b>改造前</b>　原廠主畫面</sub></td>
+<td width="50%"><img src="docs/images/after-sampo.jpg" alt="改造後"><br><sub><b>改造後</b>　Mac TVOS</sub></td>
+</tr>
+</table>
+
+## 畫面
+
+<table>
+<tr>
+<td width="50%"><img src="docs/images/finder-dark.jpg" alt="Finder　深色"><br><sub><b>Finder　深色</b></sub></td>
+<td width="50%"><img src="docs/images/finder-light.jpg" alt="Finder　淺色"><br><sub><b>Finder　淺色</b></sub></td>
+</tr>
+<tr>
+<td width="50%"><img src="docs/images/settings.jpg" alt="系統設定"><br><sub><b>系統設定</b></sub></td>
+<td width="50%"><img src="docs/images/photos-dark.jpg" alt="照片"><br><sub><b>照片</b></sub></td>
+</tr>
+<tr>
+<td width="50%"><img src="docs/images/calendar-about.jpg" alt="行事曆・關於這台電視"><br><sub><b>行事曆・關於這台電視</b></sub></td>
+<td width="50%"><img src="docs/images/airpods.jpg" alt="AirPods 卡片"><br><sub><b>AirPods 卡片</b></sub></td>
+</tr>
+<tr>
+<td width="50%"><img src="docs/images/trash-menu.jpg" alt="垃圾桶"><br><sub><b>垃圾桶</b></sub></td>
+<td width="50%"><img src="docs/images/boost.jpg" alt="一鍵提速"><br><sub><b>一鍵提速</b></sub></td>
+</tr>
+<tr>
+<td width="50%"><img src="docs/images/clock-center.jpg" alt="景深時鐘"><br><sub><b>景深時鐘</b></sub></td>
+<td width="50%"><img src="docs/images/longpress-light.jpg" alt="淺色選單"><br><sub><b>淺色選單</b></sub></td>
+</tr>
+</table>
 
 ## 提示詞
 
-以下提示詞貼給 Claude Code（或其他能執行指令的 AI）就能照做。改掉第一行的 IP 和資料夾。
+把下面任一段貼給 Claude Code（或其他能執行指令的 AI），改掉第一行的 IP，就能自動完成。
 
-### 1. 完整版：去臃腫 + 安裝 Mac TVOS + 檢查
+<details>
+<summary><b>完整版｜去臃腫＋安裝＋功能檢查</b></summary>
 
 ```text
 電視 IP：192.168.x.x（埠 5555）。安裝包位置：~/Downloads/MacTVOS-v40（改成你的資料夾）。
@@ -184,7 +120,10 @@ https://github.com/user-attachments/assets/cfc81aba-39a8-4b2f-8ec8-760da20de292
 - 要保留的 App：在這裡列出 → 保留：
 ```
 
-### 2. 只安裝 Mac TVOS
+</details>
+
+<details>
+<summary><b>只安裝 Mac TVOS</b></summary>
 
 ```text
 電視 IP：192.168.x.x（埠 5555）。安裝包在 ~/Downloads/MacTVOS-v40。
@@ -197,7 +136,10 @@ https://github.com/user-attachments/assets/cfc81aba-39a8-4b2f-8ec8-760da20de292
 6. 全程繁體中文，用表格回報，附還原指令。
 ```
 
-### 3. 兩台電視同步成一樣
+</details>
+
+<details>
+<summary><b>兩台電視同步成一樣</b></summary>
 
 ```text
 A 電視 IP：192.168.x.x，B 電視 IP：192.168.y.y，兩台都已裝 Mac TVOS。
@@ -209,7 +151,10 @@ A 電視 IP：192.168.x.x，B 電視 IP：192.168.y.y，兩台都已裝 Mac TVOS
 5. 寫入後更新 theme_revision、重啟主畫面，截圖給我看。
 ```
 
-### 4. 請 AI 改功能（改包）
+</details>
+
+<details>
+<summary><b>請 AI 幫你改功能</b></summary>
 
 ```text
 我有 Mac TVOS 的 apktool 解包資料夾（smali）。請幫我改：<要改的功能>。
@@ -222,26 +167,44 @@ A 電視 IP：192.168.x.x，B 電視 IP：192.168.y.y，兩台都已裝 Mac TVOS
 6. 在電視上實測並截圖，沒測到的項目要明講。
 ```
 
----
+</details>
 
-## 注意事項與還原
+## 常見問題
 
-- **一定要留一個主畫面**：停用或移除 Mac TVOS 前，先啟用原廠啟動器。
-- **相片元件不要停用**（例：`com.android.gallery3d`），否則 Dock 的「照片」會消失。
-- **重新安裝要重給權限**：檔案（Android 11 以上 `appops set com.gathin.tvnext MANAGE_EXTERNAL_STORAGE allow`；9／10 `pm grant` 讀寫權限）、照片、藍牙。
-- **Android 10 以下**「清理暫存」只能清主畫面自己的快取，提示文字仍寫「需要所有檔案存取權」，不影響使用。
-- 新裝的 App 不會自動換成 Mac 圖示，要加到 `app_banners`。
-
-換回原廠主畫面（Google TV 為例）：
+<details>
+<summary><b>想換回原廠主畫面</b></summary>
 
 ```bash
 adb shell pm enable com.google.android.apps.tv.launcherx
-```
-
-```bash
 adb shell cmd package set-home-activity com.google.android.apps.tv.launcherx/com.google.android.apps.tv.launcherx.home.HomeActivity
-```
-
-```bash
 adb shell pm uninstall com.gathin.tvnext
 ```
+
+</details>
+
+<details>
+<summary><b>重新安裝後照片、垃圾桶不能用</b></summary>
+
+再執行一次 `./install.sh 電視IP`，它會自動補上檔案、照片與藍牙權限。
+
+</details>
+
+<details>
+<summary><b>新裝的 App 沒有 Mac 圖示</b></summary>
+
+在 `theme-config.json` 的 `app_banners` 加一行，例如 `com.android.vending=banner_mac_appstore`，再執行 `./apply-theme.sh 電視IP`。
+
+</details>
+
+<details>
+<summary><b>注意事項</b></summary>
+
+- 一定要留一個主畫面：停用 Mac TVOS 前先啟用原廠啟動器。
+- 不要停用相片元件（例如 `com.android.gallery3d`），否則 Dock 的「照片」會消失。
+- Android 10 以下的「清理暫存」只會清主畫面自己的快取。
+
+</details>
+
+<br>
+
+<div align="center"><sub>Mac TVOS · 實測：Google TV Streamer（Android 14）、SAMPO 聯網電視（Android 9）</sub></div>
