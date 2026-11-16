@@ -8,17 +8,13 @@
 
 <br>
 
-[![下載 v40](https://img.shields.io/badge/%E4%B8%8B%E8%BC%89-v40-0A84FF?style=flat-square)](../../releases/latest)
-&nbsp;
-![Android 9+](https://img.shields.io/badge/Android-9%2B-34C759?style=flat-square&logo=android&logoColor=white)
-&nbsp;
-![Google TV](https://img.shields.io/badge/Google%20TV-%E6%94%AF%E6%8F%B4-5E5CE6?style=flat-square&logo=googletv&logoColor=white)
+[![下載 v40](https://img.shields.io/badge/%E4%B8%8B%E8%BC%89-v40-0A84FF?style=flat-square)](../../releases/latest)&nbsp;&nbsp;![Android 9+](https://img.shields.io/badge/Android-9%2B-34C759?style=flat-square&logo=android&logoColor=white)&nbsp;&nbsp;![Google TV](https://img.shields.io/badge/Google%20TV-%E6%94%AF%E6%8F%B4-5E5CE6?style=flat-square&logo=googletv&logoColor=white)
 
 </div>
 
 <br>
 
-https://github.com/user-attachments/assets/cfc81aba-39a8-4b2f-8ec8-760da20de292
+https://github.com/user-attachments/assets/17f6c6da-5149-4c28-ba48-f7c0a5587ff6
 
 <br>
 
@@ -63,8 +59,12 @@ https://github.com/user-attachments/assets/cfc81aba-39a8-4b2f-8ec8-760da20de292
 <td width="50%"><img src="docs/images/photos-dark.jpg" alt="照片"><br><sub><b>照片</b></sub></td>
 </tr>
 <tr>
-<td width="50%"><img src="docs/images/calendar-about.jpg" alt="行事曆・關於這台電視"><br><sub><b>行事曆・關於這台電視</b></sub></td>
-<td width="50%"><img src="docs/images/airpods.jpg" alt="AirPods 卡片"><br><sub><b>AirPods 卡片</b></sub></td>
+<td width="50%"><img src="docs/images/calendar.jpg" alt="行事曆"><br><sub><b>行事曆</b></sub></td>
+<td width="50%"><img src="docs/images/airpods-card.jpg" alt="AirPods 卡片"><br><sub><b>AirPods 卡片</b></sub></td>
+</tr>
+<tr>
+<td width="50%"><img src="docs/images/about.jpg" alt="關於這台電視"><br><sub><b>關於這台電視</b></sub></td>
+<td width="50%"><img src="docs/images/photos-light.jpg" alt="照片　淺色"><br><sub><b>照片　淺色</b></sub></td>
 </tr>
 <tr>
 <td width="50%"><img src="docs/images/trash-menu.jpg" alt="垃圾桶"><br><sub><b>垃圾桶</b></sub></td>
