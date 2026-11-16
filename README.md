@@ -69,13 +69,13 @@ https://github.com/user-attachments/assets/b7449272-4590-438f-9d3d-edf139887eb6
 
 | 深色 | 淺色 |
 |---|---|
-| ![照片深色](docs/images/photos-dark.jpg) | ![照片淺色](docs/images/photos-light.jpg) |
+| ![照片深色](docs/images/photos-dark-v2.jpg) | ![照片淺色](docs/images/photos-light-v2.jpg) |
 
 ### 行事曆
 
 點選單列右上的日期或 Dock 的行事曆，跳出磨砂玻璃小卡；再點一次、點卡片外、按返回都會關閉。
 
-![行事曆](docs/images/calendar.jpg)
+![行事曆](docs/images/calendar-v41.jpg)
 
 ### 關於這台電視
 
