@@ -4,11 +4,11 @@
 
 **把 Android TV／Google TV 的主畫面，變成 macOS。**
 
-<sub>選單列・Dock・Finder・系統設定・照片・行事曆・景深時鐘　全部用遙控器操作</sub>
+<sub>選單列・Dock・Finder・系統設定・照片・行事曆・動態島・天氣特效・景深時鐘　全部用遙控器操作</sub>
 
 <br>
 
-[![下載 v43](https://img.shields.io/badge/%E4%B8%8B%E8%BC%89-v43-0A84FF?style=flat-square)](../../releases/latest)&nbsp;&nbsp;![Android 9+](https://img.shields.io/badge/Android-9%2B-34C759?style=flat-square&logo=android&logoColor=white)&nbsp;&nbsp;![Google TV](https://img.shields.io/badge/Google%20TV-%E6%94%AF%E6%8F%B4-5E5CE6?style=flat-square&logo=googletv&logoColor=white)
+[![下載 v44](https://img.shields.io/badge/%E4%B8%8B%E8%BC%89-v44-0A84FF?style=flat-square)](../../releases/latest)&nbsp;&nbsp;![Android 9+](https://img.shields.io/badge/Android-9%2B-34C759?style=flat-square&logo=android&logoColor=white)&nbsp;&nbsp;![Google TV](https://img.shields.io/badge/Google%20TV-%E6%94%AF%E6%8F%B4-5E5CE6?style=flat-square&logo=googletv&logoColor=white)
 
 </div>
 
@@ -22,9 +22,9 @@ https://github.com/user-attachments/assets/b7449272-4590-438f-9d3d-edf139887eb6
 
 > 需要一台電腦（macOS／Linux）和 [adb](https://developer.android.com/tools/releases/platform-tools)，電視開啟「開發人員選項 → 網路偵錯」。
 
-[v43 版本說明與實機前後對照](../../releases/tag/v43)
+[v44 版本說明](../../releases/tag/v44)
 
-**1.** 下載 [`MacTVOS-v43.zip`](../../releases/latest) 並解壓縮
+**1.** 下載 [`MacTVOS-v44.zip`](../../releases/latest) 並解壓縮
 
 **2.** 安裝並設為主畫面
 
@@ -51,6 +51,10 @@ https://github.com/user-attachments/assets/b7449272-4590-438f-9d3d-edf139887eb6
 
 ## 功能一覽
 
+### 應用程式庫
+
+點 Dock 最左邊的 Finder 打開所有 App。按 OK 直接開啟，長按釘選到 Dock（有勾號代表已在 Dock）。
+
 ### Finder（選單列「檔案」）
 
 依外觀自動切換深色／淺色。側欄有 iCloud、Android TV、內部儲存空間、網路、桌面、AirDrop、最近項目、應用程式。
@@ -75,9 +79,25 @@ https://github.com/user-attachments/assets/b7449272-4590-438f-9d3d-edf139887eb6
 
 ### 行事曆
 
-點選單列右上的日期或 Dock 的行事曆，跳出磨砂玻璃小卡；再點一次、點卡片外、按返回都會關閉。
+點選單列右上角的日期（或 Dock 的行事曆），會跳出連動的磨砂玻璃月曆小卡。再點一次、點卡片外或按返回就會關閉。
 
 ![行事曆](docs/images/calendar-v41.jpg)
+
+### 動態島
+
+選單列正中央的黑色膠囊就是動態島。用遙控器移過去按 OK 會展開：
+
+- **通知**：新通知會從動態島彈出來
+- **正在播放**：顯示目前的音樂，可上一首、播放／暫停、下一首
+- **計時器**：一鍵 5／10／30 分鐘，倒數會留在動態島上
+
+![動態島](docs/images/dynamic-island-v44.jpg)
+
+### 音樂卡片
+
+點選單列的「音樂」，跳出半透明磨砂的播放卡片，大小和 macOS 的媒體播放器差不多。卡片可以移動、調整透明度，按 × 關閉。
+
+![音樂卡片](docs/images/music-card-v44.jpg)
 
 ### 關於這台電視
 
@@ -107,9 +127,15 @@ https://github.com/user-attachments/assets/b7449272-4590-438f-9d3d-edf139887eb6
 
 ![AirPods 卡片](docs/images/airpods-card.jpg)
 
+### 天氣特效
+
+桌面依照當地真實天氣自動變化：下雨會有雨絲和玻璃上的水珠，也有下雪、雷雨閃電、起霧、晴天光束與颱風。在選單列「天氣」可以開關。
+
+![天氣特效](docs/images/weather-rain-v44.jpg)
+
 ### 景深時鐘
 
-時鐘放在天空區域，被大樓擋住，看起來在建築後面。時間補零顯示（例：`08:05`），可拖動位置，「重設位置」回到置中。
+時鐘放在天空區域，數字會被山或大樓擋住，看起來就在景物後面；白天、夜景桌布各自對齊。時間補零顯示（例：`08:05`），可拖動位置，「重設位置」回到置中。
 
 ![時鐘置中](docs/images/clock-center.jpg)
 
@@ -131,7 +157,7 @@ https://github.com/user-attachments/assets/b7449272-4590-438f-9d3d-edf139887eb6
 <summary><b>完整版｜去臃腫＋安裝＋功能檢查</b></summary>
 
 ```text
-電視 IP：192.168.x.x（埠 5555）。安裝包位置：~/Downloads/MacTVOS-v43（改成你的資料夾）。
+電視 IP：192.168.x.x（埠 5555）。安裝包位置：~/Downloads/MacTVOS-v44（改成你的資料夾）。
 請當我的電視助手，用 ADB 幫我「去臃腫、安裝 Mac TVOS、檢查功能」，規則如下：
 
 【連線】
@@ -173,7 +199,7 @@ https://github.com/user-attachments/assets/b7449272-4590-438f-9d3d-edf139887eb6
 <summary><b>只安裝 Mac TVOS</b></summary>
 
 ```text
-電視 IP：192.168.x.x（埠 5555）。安裝包在 ~/Downloads/MacTVOS-v43。
+電視 IP：192.168.x.x（埠 5555）。安裝包在 ~/Downloads/MacTVOS-v44。
 請用 ADB 幫我安裝 Mac TVOS：
 1. adb connect，回報型號、Android 版本、目前主畫面。
 2. 先記下目前主畫面（cmd package resolve-activity -c android.intent.category.HOME），方便還原。
