@@ -2,7 +2,7 @@
 
 把 Android TV／Google TV 的主畫面換成 macOS 風格：選單列、Dock、Finder、系統設定、照片、行事曆、景深時鐘，全部用遙控器操作。
 
-- 最新版：**v39**，支援 **Android 9 以上**。
+- 最新版：**v39**，支援 **Android 9 以上**（v40 視窗縮小版已完成實機測試，尚未打包發布）。
 - 下載：[Releases](../../releases/latest) 的 `MacTVOS-v39.zip`（APK、一鍵安裝腳本、主題設定、去臃腫提示詞）。
 - 實測機型：Google TV Streamer（Android 14）、SAMPO 聯網電視（MediaTek，Android 9）。
 - 本專案是 macOS TV 啟動器 4.1.3（`com.gathin.tvhome`）的修改版，改用獨立套件名 `com.gathin.tvnext`，可以和原版並存。
@@ -31,7 +31,7 @@
 |---|---|
 | ![原廠主畫面](docs/images/before-stock-home.jpg) | ![原廠系統設定](docs/images/before-stock-settings.jpg) |
 
-原廠主畫面是一排排訊號源和 App 方塊，設定是 Android 的清單畫面。Google TV 原廠主畫面則是推薦影片牆。
+原廠主畫面是一排排訊號源和 App 方塊，設定是一格格的大圖示。Google TV 原廠主畫面則是推薦影片牆。
 
 ### 改造後：Mac TVOS
 
@@ -367,6 +367,7 @@ adb shell pm uninstall com.gathin.tvnext
 
 ## 版本紀錄
 
+- **v40**（2026-11-16）：設定、照片、Finder、下載視窗開啟時縮小約一成，四周露出桌布，照片不再蓋住 Dock（設定四周邊距 96／60 dp；照片 72%×70%；Finder 60%；下載 56%×60%）。
 - **v39**（2026-11-16）：支援 Android 9／10。安裝腳本依版本給權限；垃圾檔案在舊系統不再閃退；移除舊系統多跳的媒體權限提示。
 - **v38**：Finder、下拉選單、長按選單跟隨深淺色；垃圾桶改三項；景深時鐘置中、時間補零。
 - **v37**：自製行事曆小卡；垃圾桶一鍵清理與記憶體顯示；關於這台電視漸層加深。
