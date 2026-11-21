@@ -1,3 +1,9 @@
+> **2026-11-21 成果網站更新**
+>
+> [開啟成果網站](https://mac-tvos-evan-v47.yyum7tt03.chatgpt.site/) · [觀看 Dock、應用程式庫與視窗操作](https://mac-tvos-evan-v47.yyum7tt03.chatgpt.site/#operation-films) · [網站更新紀錄](Website-Update-20261121.md)
+>
+> 首頁主影片與排版維持原樣；三種操作影片於下方分開展示。[網站原始碼與公開素材快照](MacTVOS-Showcase-20261121_v3.zip)。以下既有安裝與版本紀錄保留原標示。
+
 <div align="center">
 
 # Mac TVOS
@@ -281,3 +287,4 @@ adb shell pm uninstall com.gathin.tvnext
 <br>
 
 <div align="center"><sub>Mac TVOS · 實測：Google TV Streamer（Android 14）、SAMPO 聯網電視（Android 9）</sub></div>
+
