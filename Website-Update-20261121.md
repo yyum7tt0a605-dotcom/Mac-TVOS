@@ -1,6 +1,6 @@
 # Mac TVOS 網站更新 · 2026-11-21
 
-- 狀態：網站完成；GitHub 發表準備中。
+- 狀態：網站完成；GitHub 已同步原始碼與公開素材。
 - 建立／更新：2026-11-21。
 - 正式網站：https://mac-tvos-evan-v47.yyum7tt03.chatgpt.site/
 - 操作影片：https://mac-tvos-evan-v47.yyum7tt03.chatgpt.site/#operation-films
@@ -15,4 +15,4 @@
 
 不包含 APK、瀏覽器帳號資料、個人資料或簽章金鑰。
 
-SHA-256：28089af0cee87506869e692b233d3c829d2af667bc8cc453b8ae63fdf43e765c
+SHA-256：af2f908a3eeecdfa80b6010839de120f50b8e279dfb05cfaa71a60ce701b3db1
